@@ -11,8 +11,10 @@
     <h1>Welcome, to the Gallery of my Life</h1>
     <div ng-controller="GalleryController as gallery">
       <div ng-repeat="photo in gallery.photoBank">
-        <img ng-src="{{ photo.url }}" >
-        <p>{{ photo.description }}</p>
+        <div ng-click="gallery.toggle(photo)">
+          <img ng-show="photo.visible" ng-src="{{ photo.url }}">
+          <p ng-hide="photo.visible">{{ photo.description }}</p>
+        </div>
         <button ng-click="gallery.addLike(photo)">Like</button>
         <button ng-click="comment()">Add Comment</button>
         <p>{{ photo.likes }}</p>
