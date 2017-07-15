@@ -4,20 +4,22 @@
     <meta charset="utf-8">
     <title>Gallery of my Life</title>
     <script type="text/javascript" src="vendors/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/gallery.js"></script>
     <script type="text/javascript" src="scripts/client.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="views/styles.css">
   </head>
   <body ng-app="myApp">
     <h1>Welcome, to the Gallery of my Life</h1>
-    <div ng-controller="GalleryController as gallery">
-      <div ng-repeat="photo in gallery.photoBank">
-        <div ng-click="gallery.toggle(photo)">
+    <div ng-controller="GalleryController">
+      <div ng-repeat="photo in photoBank">
+        <div ng-click="toggle(photo)">
           <img ng-show="photo.visible" ng-src="{{ photo.url }}">
           <p ng-hide="photo.visible">{{ photo.description }}</p>
         </div>
-        <button ng-click="gallery.addLike(photo)">Like</button>
+        <button ng-click="addLike(photo)">Like</button>
         <button ng-click="comment()">Add Comment</button>
-        <p>{{ photo.likes }}</p>
+        <p>Likes: {{ photo.likes }}</p>
+        <p>Views: {{ photo.views }}</p>
       </div>
     </div>
   </body>
