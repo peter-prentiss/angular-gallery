@@ -20,6 +20,9 @@
         <button ng-click="comment()">Add Comment</button>
         <p>Likes: {{ photo.likes }}</p>
         <p>Views: {{ photo.views }}</p>
+        <div ng-repeat="comment in photo.comments">
+          <p>{{ comment }}</p>
+        </div>
       </div>
     </div>
   </body>

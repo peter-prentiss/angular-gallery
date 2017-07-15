@@ -12,10 +12,11 @@ myApp.controller('GalleryController', function($scope){
     console.log('liked');
     photo.likes++;
   }
-  // toggles visible so photo and description switch visibility
+  // toggles visible property so photo and description switch visibility
   $scope.toggle = function(photo) {
     console.log('toggle');
     photo.visible = !photo.visible;
+    //increments view counter when switching back to photo view
     if (photo.visible) {
       photo.views++
     }
