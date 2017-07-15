@@ -16,7 +16,7 @@
     </header>
     <div class="container">
       <div ng-controller="GalleryController">
-        <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="photo in photoBank">
+        <div class="cool-box col-md-4 col-sm-6 col-xs-12" ng-repeat="photo in photoBank">
           <div class="photoBox" ng-click="toggle(photo)">
             <img ng-show="photo.visible" ng-src="{{ photo.url }}">
             <p ng-hide="photo.visible">{{ photo.description }}</p>
@@ -29,7 +29,7 @@
           <button type="button" class="btn" ng-click="addComment(photo, comment)">Add Comment</button>
           <p>Views: {{ photo.views }}</p>
           <button ng-click="showComments(photo)">Show Comments</button>
-          <div ng-repeat="comment in photo.comments">
+          <div ng-repeat="comment in photo.comments track by $index">
             <p ng-show="photo.showComments">{{ comment }}</p>
           </div>
         </div>
