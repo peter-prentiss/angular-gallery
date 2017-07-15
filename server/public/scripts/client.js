@@ -18,6 +18,13 @@ myApp.controller('GalleryController', function($scope){
   // Adds comment to photo's comment array
   $scope.addComment = function (photo, comment) {
     photo.comments.push(comment);
+    $scope.comment = '';
+  }
+
+  $scope.comment = '';
+
+  $scope.reset = function() {
+    $scope.comment = angular.copy($scope.comment);
   }
   // Toggles photo's showComments property when clicked
   $scope.showComments = function (photo) {

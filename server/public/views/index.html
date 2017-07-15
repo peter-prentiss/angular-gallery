@@ -5,6 +5,7 @@
     <title>Gallery of my Life</title>
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="views/styles.css">
     <script type="text/javascript" src="vendors/angular.min.js"></script>
     <script type="text/javascript" src="scripts/gallery.js"></script>
@@ -12,7 +13,7 @@
   </head>
   <body ng-app="myApp">
     <header>
-      <h1>Welcome, to the Gallery of my Life</h1>
+      <h1>Me and my Boy</h1>
     </header>
     <div class="container">
       <div ng-controller="GalleryController">
@@ -22,15 +23,17 @@
             <p ng-hide="photo.visible">{{ photo.description }}</p>
           </div>
           <div class="likes">
-            <button type="button" class="btn-info" ng-click="addLike(photo)">Like</button>
             <p>Likes: {{ photo.likes }}</p>
+            <button type="button" class="btn like" ng-click="addLike(photo)">Like</button>
+            <p>Views: {{ photo.views }}</p>
           </div>
           <input type="text" ng-model="comment" placeholder="Comment here...">
-          <button type="button" class="btn" ng-click="addComment(photo, comment)">Add Comment</button>
-          <p>Views: {{ photo.views }}</p>
-          <button ng-click="showComments(photo)">Show Comments</button>
-          <div ng-repeat="comment in photo.comments track by $index">
-            <p ng-show="photo.showComments">{{ comment }}</p>
+          <button type="button" class="btn comment" ng-click="addComment(photo, comment)">Add Comment</button>
+          <button class="btn show" ng-click="showComments(photo)">Show Comments</button>
+          <div class="comment-box">
+            <div ng-repeat="comment in photo.comments track by $index">
+              <p ng-show="photo.showComments">{{ comment }}</p>
+            </div>
           </div>
         </div>
       </div>
