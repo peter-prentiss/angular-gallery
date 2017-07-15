@@ -17,7 +17,8 @@
           <p ng-hide="photo.visible">{{ photo.description }}</p>
         </div>
         <button ng-click="addLike(photo)">Like</button>
-        <button ng-click="comment()">Add Comment</button>
+        <input type="text" ng-model="comment" placeholder="Comment here...">
+        <button ng-click="addComment(photo, comment)">Add Comment</button>
         <p>Likes: {{ photo.likes }}</p>
         <p>Views: {{ photo.views }}</p>
         <div ng-repeat="comment in photo.comments">

@@ -21,4 +21,9 @@ myApp.controller('GalleryController', function($scope){
       photo.views++
     }
   }
+
+  $scope.addComment = function(photo, comment) {
+    console.log('comment added');
+    photo.comments.push(comment);
+  }
 });
