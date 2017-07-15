@@ -3,27 +3,35 @@
   <head>
     <meta charset="utf-8">
     <title>Gallery of my Life</title>
+    <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="views/styles.css">
     <script type="text/javascript" src="vendors/angular.min.js"></script>
     <script type="text/javascript" src="scripts/gallery.js"></script>
     <script type="text/javascript" src="scripts/client.js"></script>
-    <link rel="stylesheet" href="views/styles.css">
   </head>
   <body ng-app="myApp">
-    <h1>Welcome, to the Gallery of my Life</h1>
-    <div ng-controller="GalleryController">
-      <div ng-repeat="photo in photoBank">
-        <div ng-click="toggle(photo)">
-          <img ng-show="photo.visible" ng-src="{{ photo.url }}">
-          <p ng-hide="photo.visible">{{ photo.description }}</p>
-        </div>
-        <button ng-click="addLike(photo)">Like</button>
-        <input type="text" ng-model="comment" placeholder="Comment here...">
-        <button ng-click="addComment(photo, comment)">Add Comment</button>
-        <p>Likes: {{ photo.likes }}</p>
-        <p>Views: {{ photo.views }}</p>
-        <button ng-click="showComments(photo)">Show Comments</button>
-        <div ng-repeat="comment in photo.comments">
-          <p ng-show="photo.showComments">{{ comment }}</p>
+    <header>
+      <h1>Welcome, to the Gallery of my Life</h1>
+    </header>
+    <div class="container">
+      <div ng-controller="GalleryController">
+        <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="photo in photoBank">
+          <div class="photoBox" ng-click="toggle(photo)">
+            <img ng-show="photo.visible" ng-src="{{ photo.url }}">
+            <p ng-hide="photo.visible">{{ photo.description }}</p>
+          </div>
+          <div class="likes">
+            <button type="button" class="btn-info" ng-click="addLike(photo)">Like</button>
+            <p>Likes: {{ photo.likes }}</p>
+          </div>
+          <input type="text" ng-model="comment" placeholder="Comment here...">
+          <button type="button" class="btn" ng-click="addComment(photo, comment)">Add Comment</button>
+          <p>Views: {{ photo.views }}</p>
+          <button ng-click="showComments(photo)">Show Comments</button>
+          <div ng-repeat="comment in photo.comments">
+            <p ng-show="photo.showComments">{{ comment }}</p>
+          </div>
         </div>
       </div>
     </div>

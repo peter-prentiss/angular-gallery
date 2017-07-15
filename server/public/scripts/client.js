@@ -5,8 +5,6 @@ var myApp = angular.module('myApp', []);
 myApp.controller('GalleryController', function($scope){
   // array of data with photos and descriptions.
   $scope.photoBank = photoGallery;
-  // {url: ../images'..., description: ..., likes: 0, visible: true}
-
   // increments like counter
   $scope.addLike = function (photo) {
     photo.likes++;

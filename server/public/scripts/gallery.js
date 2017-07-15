@@ -3,16 +3,48 @@
 
 let photoGallery = [
   {
-    url: '../images/peter.shopped.jpg',
-    description: 'A handsome Prime person',
-    comments: ['cool', 'awesome', 'sexy'],
+    url: '../images/isaac_smile.jpg',
+    description: 'The first time I got to meet my son. He was 2 months old and when I held him he looked me in the eyes and smiled. This is my favorite picture of all time',
+    comments: [],
     likes: 0,
     views: 1,
     visible: true,
     showComments: false
   }, {
-    url: '../images/Selfiewisaac1copy.jpg',
+    url: '../images/Selfiewisaac.jpg',
     description: 'Me with my beautiful son',
+    comments: [],
+    likes: 0,
+    views: 1,
+    visible: true,
+    showComments: false
+  }, {
+    url: '../images/isaac_midlaugh.jpg',
+    description: 'Caught this picture in the middle of a huge laught. Best face ever',
+    comments: [],
+    likes: 0,
+    views: 1,
+    visible: true,
+    showComments: false
+  }, {
+    url: '../images/isaac_sleeping.jpg',
+    description: 'Isaac having a good dream',
+    comments: [],
+    likes: 0,
+    views: 1,
+    visible: true,
+    showComments: false
+  }, {
+    url: '../images/isaac_giftwrap_pope.jpg',
+    description: 'On Christmas, Isaac wearing his pope hat made out of gift wrap',
+    comments: [],
+    likes: 0,
+    views: 1,
+    visible: true,
+    showComments: false
+  }, {
+    url: '../images/isaac_chewfinger.jpg',
+    description: 'Isaac loved to chew on my fingers',
     comments: [],
     likes: 0,
     views: 1,
