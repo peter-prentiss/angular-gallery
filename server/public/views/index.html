@@ -20,16 +20,16 @@
       <div ng-controller="GalleryController">
         <div class="cool-box col-md-4 col-sm-6 col-xs-12" ng-repeat="photo in photoBank">
           <div class="photoBox" ng-click="toggle(photo)">
-            <img ng-show="photo.visible" ng-src="{{ photo.url }}">
+            <img class="img-responsive" ng-show="photo.visible" ng-src="{{ photo.url }}">
             <p ng-hide="photo.visible">{{ photo.description }}</p>
           </div>
+          <button type="button" class="btn like" ng-click="addLike(photo)">Like <span class="glyphicon glyphicon-heart"></span></button>
           <div class="likes">
             <p>Likes: {{ photo.likes }}</p>
-            <button type="button" class="btn like" ng-click="addLike(photo)">Like</button>
             <p>Views: {{ photo.views }}</p>
           </div>
           <input type="text" ng-model="comment" placeholder="Comment here...">
-          <button type="button" class="btn comment" ng-click="addComment(photo, comment)">Add Comment</button>
+          <button type="button" class="btn comment" ng-click="addComment(photo, comment)">Add Comment <span class="glyphicon glyphicon-plus-sign"></span></button>
           <button class="btn show" ng-click="showComments(photo)">Show Comments</button>
           <div class="comment-box">
             <div ng-repeat="comment in photo.comments track by $index">
