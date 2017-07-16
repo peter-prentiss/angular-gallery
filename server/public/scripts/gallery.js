@@ -19,7 +19,7 @@ let photoGallery = [
     visible: true,
     showComments: false
   }, {
-    url: '../images/isaac_midlaugh.jpg',
+    url: '../images/isaac_midlaugh.JPG',
     description: 'Caught this picture in the middle of a huge laugh. Best face ever',
     comments: [],
     likes: 0,
