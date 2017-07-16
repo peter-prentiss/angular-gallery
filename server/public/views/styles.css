@@ -6,11 +6,11 @@ body {
 h1 {
   margin-top: 0;
   padding-top: 50px;
-  padding-bottom: 25px;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 5em;
   font-weight: 700;
   font-variant: small-caps;
+  letter-spacing: 5px;
 }
 
 img {
@@ -22,18 +22,39 @@ header {
   margin: 0;
   text-align: center;
   color: white;
-  background-color: rgb(29, 28, 62)
+  background-color: rgb(29, 28, 62);
+}
+
+.header-bottom {
+  height: 25px;
+  border-top: 3px solid white;
+  border-bottom: 5px solid white;
+  background-color: rgb(29, 28, 62);
+  margin-bottom: 15px;
 }
 
 .photoBox {
   width: 350px;
   height: 350px;
+  border-radius: 10px;
   overflow: hidden;
+  background-color: rgb(0, 173, 210);
+}
+
+.photoBox p {
+  padding: 10px;
+}
+
+.container {
+  background-color: #333;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom: 20px solid white;
 }
 
 .cool-box {
   font-family: 'Quicksand', sans-serif;
-  background-color: #333;
+  /*background-color: #333;*/
   padding-top: 20px;
   padding-bottom: 25px;
   color: white;
@@ -57,13 +78,25 @@ header {
 }
 
 .container input {
+  margin-top: 3px;
   color: black;
+  width: 225px;
 }
 
 .like {
   background-color: rgb(0, 173, 210);
   margin-right: 130px;
   /*border-radius: 20px;*/
+}
+
+.comment {
+  background-color: rgb(96, 217, 163);
+}
+
+.show {
+  background-color: rgb(213, 95, 194);
+  width: 100%;
+  margin-top: 10px;
 }
 
 
@@ -78,7 +111,6 @@ header {
 }
 ::-webkit-scrollbar-thumb {
   background: rgb(145, 81, 137);
-  border-radius: 50px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #400080;
