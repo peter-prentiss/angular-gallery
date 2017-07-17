@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Gallery of my Life</title>
+    <title>My Buddy and Me</title>
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-theme.css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Quicksand" rel="stylesheet">
@@ -11,27 +11,46 @@
     <script type="text/javascript" src="scripts/gallery.js"></script>
     <script type="text/javascript" src="scripts/client.js"></script>
   </head>
+  <!-- Sets Angular App -->
   <body ng-app="myApp">
+
     <header>
-      <h1>Me and my Boy</h1>
+      <h1>My Buddy and Me</h1>
       <div class="header-bottom"></div>
     </header>
+
     <div class="container">
+
+      <!-- Assigns Angular controller to div -->
       <div ng-controller="GalleryController">
+
+        <!-- Loops through photo gallery array -->
         <div class="cool-box col-md-4 col-sm-6 col-xs-12" ng-repeat="photo in photoBank">
+
+          <!-- Houses image and description. Click toggles visibility. -->
           <div class="photoBox" ng-click="toggle(photo)">
+            <!-- Image shows when property visible is true. -->
             <img class="img-responsive" ng-show="photo.visible" ng-src="{{ photo.url }}">
+            <!-- Description hidden when property visible is true. -->
             <p ng-hide="photo.visible">{{ photo.description }}</p>
           </div>
+
+          <!-- Button adds likes on click .-->
           <button type="button" class="btn like" ng-click="addLike(photo)">Like <span class="glyphicon glyphicon-heart"></span></button>
+          <!-- Likes and views counters. -->
           <div class="likes">
             <p>Likes: {{ photo.likes }}</p>
             <p>Views: {{ photo.views }}</p>
           </div>
+
+          <!-- Comment input field and button that adds comment to photo's comment array. -->
           <input type="text" ng-model="comment" placeholder="Comment here...">
           <button type="button" class="btn comment" ng-click="addComment(photo, comment)">Add Comment <span class="glyphicon glyphicon-plus-sign"></span></button>
+          <!-- Toggles visibility of comments. -->
           <button class="btn show" ng-click="showComments(photo)">Show Comments</button>
+
           <div class="comment-box">
+            <!-- Loops through comments in photo's comments array. -->
             <div ng-repeat="comment in photo.comments track by $index">
               <p ng-show="photo.showComments">{{ comment }}</p>
             </div>
